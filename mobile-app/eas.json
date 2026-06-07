@@ -15,7 +15,7 @@
         "buildType": "apk"
       },
       "env": {
-        "EXPO_PUBLIC_API_URL": "https://snapledger-mznl.onrender.com",
+        "EXPO_PUBLIC_API_URL": "https://snapledger-9wsn.onrender.com",
         "EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID": "923158781933-56k4meecuv95d7g563dgn32o7dpn7emh.apps.googleusercontent.com",
         "EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID": "923158781933-ckhr52n0ql494io8ujpo2jdbt1u9iavc.apps.googleusercontent.com"
       }
