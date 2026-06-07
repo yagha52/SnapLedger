@@ -1,0 +1,17 @@
+node_modules/
+.expo/
+.next/
+dist/
+build/
+bin/
+obj/
+out/
+.env
+.env.local
+.env.development
+.env.production
+appsettings.Development.json
+appsettings.*.json
+!appsettings.json
+*.log
+.DS_Store

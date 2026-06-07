@@ -1,0 +1,6 @@
+@SnapLedger.Api_HostAddress = http://localhost:5199
+
+GET {{SnapLedger.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
