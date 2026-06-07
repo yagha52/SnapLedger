@@ -101,7 +101,6 @@ export default function RegisterPage() {
             useOneTap
             theme="filled_black"
             shape="rectangular"
-            locale="en"
           />
         </div>
 

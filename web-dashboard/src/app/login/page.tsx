@@ -110,7 +110,6 @@ export default function LoginPage() {
             useOneTap
             theme="filled_black"
             shape="rectangular"
-            locale="en"
           />
         </div>
 
