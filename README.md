@@ -16,6 +16,54 @@ SnapLedger is an end-to-end bill management ecosystem designed to digitize, orga
    - **Analytics & Visualisation**: Recharts-powered graphs showing category breakdowns and monthly spending totals.
    - **Interactive Table**: Edit incorrect OCR reads, delete receipts, and view original images.
    - **CSV Export**: Instantly download your expense data to a spreadsheet.
+## Live Production Links
+- **Web Dashboard**: [https://snap-ledger-web.vercel.app/](https://snap-ledger-web.vercel.app/)
+- **Backend API Base URL**: [https://snapledger-9wsn.onrender.com](https://snapledger-9wsn.onrender.com)
+- **Mobile APK Download**: [https://expo.dev/artifacts/eas/6m9Q9WFKWX9CMjDB9CDP3Y.apk](https://expo.dev/artifacts/eas/6m9Q9WFKWX9CMjDB9CDP3Y.apk)
+
+## Environment Variables Template
+Do not commit raw keys. Use the following templates when deploying or running locally.
+
+**Backend (`appsettings.Development.json`):**
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Host=YOUR_DB_HOST;Database=snapledger;Username=YOUR_USER;Password=YOUR_PASSWORD"
+  },
+  "Jwt": {
+    "Secret": "YOUR_SUPER_SECRET_JWT_KEY",
+    "Issuer": "snapledger",
+    "Audience": "snapledger-clients"
+  },
+  "Google": {
+    "ClientId": "YOUR_GOOGLE_WEB_CLIENT_ID"
+  },
+  "OcrSpace": {
+    "ApiKey": "YOUR_OCR_API_KEY"
+  },
+  "ImgBB": {
+    "ApiKey": "YOUR_IMGBB_API_KEY"
+  }
+}
+```
+
+**Web Dashboard (`web-dashboard/.env.local`):**
+```env
+NEXT_PUBLIC_API_URL=http://localhost:5000
+NEXT_PUBLIC_GOOGLE_CLIENT_ID=YOUR_GOOGLE_WEB_CLIENT_ID
+```
+
+**Mobile App (`mobile-app/.env`):**
+```env
+EXPO_PUBLIC_API_URL=http://YOUR_LOCAL_IP:5000
+EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID=YOUR_GOOGLE_WEB_CLIENT_ID
+EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID=YOUR_GOOGLE_ANDROID_CLIENT_ID
+```
+
+## Creative Feature & Rationale
+**Feature Built:** Spending Analytics & Multi-Currency Normalisation + CSV Export.
+
+**Rationale:** A bill scanner is fundamentally a data-entry tool, but users extract value from *insights*, not just stored images. By implementing Recharts-powered analytics, users can instantly visualize their monthly spending and category breakdowns. To make this data actionable, we implemented a CSV Export tool so users can integrate their scanned receipts into Excel or accounting software. Because bills are often in different currencies, the backend features a currency normalisation layer (e.g., LBP to USD) ensuring the charts and totals accurately reflect unified spending. This transforms the app from a simple scanner into a genuine financial management tool.
 
 ## Prerequisites
 - Node.js 20+
